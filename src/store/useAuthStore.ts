@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { User, onAuthStateChanged } from 'firebase/auth';
+import { User, onAuthStateChanged, Unsubscribe } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
 
 interface AuthState {
@@ -7,7 +7,7 @@ interface AuthState {
   loading: boolean;
   setUser: (user: User | null) => void;
   setLoading: (loading: boolean) => void;
-  initializeAuthListener: () => void;
+  initializeAuthListener: () => Unsubscribe;
 }
 
 export const useAuthStore = create<AuthState>((set) => ({
