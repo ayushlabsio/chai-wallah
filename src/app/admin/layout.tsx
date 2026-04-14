@@ -49,24 +49,27 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </div>
 
           <nav className="flex-1 flex flex-col gap-2">
-            <Link 
-              href="/admin" 
+            <Link
+              href="/admin"
               className={getLinkClass("/admin")}
             >
               Inventory
             </Link>
-            <Link 
-              href="/admin/products/new" 
+            <Link
+              href="/admin/products/new"
               className={getLinkClass("/admin/products/new")}
             >
               Add Product
             </Link>
-            <Link 
-              href="/admin/categories" 
+            <Link
+              href="/admin/categories"
               className={getLinkClass("/admin/categories")}
             >
               Categories
             </Link>
+            <div className="px-4 py-3 text-sm font-medium tracking-wide rounded-sm text-warm-gray opacity-50 cursor-not-allowed">
+              Orders
+            </div>
             <div className="px-4 py-3 text-sm font-medium tracking-wide rounded-sm text-warm-gray opacity-50 cursor-not-allowed">
               Analytics
             </div>
@@ -93,7 +96,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           {/* Dynamic decorative backdrop subtle glassmorphism */}
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-tea-green/10 rounded-full blur-3xl -z-10 pointer-events-none opacity-50" />
           <div className="absolute bottom-0 left-[20%] w-[500px] h-[500px] bg-warm-gray/10 rounded-full blur-3xl -z-10 pointer-events-none opacity-60" />
-          
+
           {children}
         </main>
       </div>
